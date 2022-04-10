@@ -1,0 +1,24 @@
+{
+  "fadeDuration": 700,
+  "notes": {
+    "C4": { "offset": 0.5, "key": "a" },
+    "Db4": { "offset": 0.55, "key": "w" },
+    "D4": { "offset": 0.7, "key": "s" },
+    "Eb4": { "offset": 0.55, "key": "e" },
+    "E4": { "offset": 0.65, "key": "d" },
+    "F4": { "offset": 0.6, "key": "f" },
+    "Gb4": { "offset": 0.35, "key": "t" },
+    "G4": { "offset": 0.65, "key": "g" },
+    "Ab4": { "offset": 0.5, "key": "y" },
+    "A4": { "offset": 0.25, "key": "h" },
+    "Bb4": { "offset": 0.4, "key": "u" },
+    "B4": { "offset": 0.45, "key": "j" },
+    "C5": { "offset": 0.2, "key": "k" },
+    "Db5": { "offset": 0.65, "key": "o" },
+    "D5": { "offset": 0.4, "key": "l" },
+    "Eb5": { "offset": 0.65, "key": "p" },
+    "E5": { "offset": 0.6, "key": ";" }
+  },
+  "blackKeys": ["w","e","r","t","y","u","i","o","p"],
+  "whiteKeys": ["a","s","d","f","g","h","j","k","l",";"]
+}
