@@ -12,12 +12,12 @@
   },
   "keys": ["1","2","3","4","5","6","7","8","9","0"],
   "icons": {
-    "bass0": "",
-    "bass1": "",
+    "bass0": "/assets/images/bass_icon.png",
+    "bass1": "/assets/images/bass_icon.png",
     "rim": "/assets/images/snare_icon.png",
     "snare": "/assets/images/snare_icon.png",
     "clap": "/assets/images/clap_icon.png",
-    "tom": "",
+    "tom": "/assets/images/tom_icon.png",
     "hihat0": "/assets/images/hihat_icon.png",
     "hihat1": "/assets/images/hihat_icon.png",
     "cymbal": "/assets/images/cymbal_icon.png"

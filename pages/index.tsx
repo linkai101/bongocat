@@ -26,11 +26,11 @@ export default function Home() {
 
 
     <div className="h-screen h-screen-safari overflow-auto bg-stone-900">
-      <div className="container max-w-2xl h-80 relative">
+      <div className="container max-w-2xl aspect-video relative">
         <hr className="absolute w-full top-1/2 origin-center rotate-12 bg-stone-50 border-2 border-stone-50 rounded-md"/>
 
         {/* DRUMS */}
-        <div className="absolute aspect-[3/2]" style={{ width: "38%", top: "16%", left: "1%" }}>
+        <div className="absolute aspect-[3/2]" style={{ width: "38%", top: "22%", left: "1%" }}>
           <img src="/assets/images/bongocat/cat.png" className="absolute top-0 left-0"/>
           <img src="/assets/images/bongocat/mouth.png" className="absolute top-0 left-0"/>
           {isPlayingDrumsL ?
@@ -47,7 +47,7 @@ export default function Home() {
         </div>
 
         {/* PIANO */}
-        <div className="absolute aspect-[3/2]" style={{ width: "38%", top: "29%", left: "29%" }}>
+        <div className="absolute aspect-[3/2]" style={{ width: "38%", top: "32%", left: "29%" }}>
           <img src="/assets/images/bongocat/keyboard.png" className="absolute top-0 left-0"/>
           <img src="/assets/images/bongocat/cat.png" className="absolute top-0 left-0"/>
           <img src="/assets/images/bongocat/mouth.png" className="absolute top-0 left-0"/>
@@ -64,7 +64,7 @@ export default function Home() {
         </div>
         
         {/* BONGO */}
-        <div className="absolute aspect-[3/2]" style={{ width: "38%", top: "42%", left: "58%" }}>
+        <div className="absolute aspect-[3/2]" style={{ width: "38%", top: "43%", left: "58%" }}>
           <img src="/assets/images/bongocat/bongo.png" className="absolute top-0 left-0"/>
           <img src="/assets/images/bongocat/cat.png" className="absolute top-0 left-0"/>
           <img src="/assets/images/bongocat/mouth.png" className="absolute top-0 left-0"/>
