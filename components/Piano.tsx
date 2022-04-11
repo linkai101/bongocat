@@ -89,7 +89,18 @@ export default function Piano(props) {
         {config.blackKeys.map(key =>
           Object.keys(config.notes).find(note => config.notes[note].key === key) ?
           <div
-            className={`flex-1 flex flex-col-reverse px-1 py-2 ${!keysDown[key] ? 'bg-stone-800' : 'bg-stone-700'} border-4 border-stone-200 rounded-xl`}
+            className={`flex-1 flex flex-col-reverse px-1 py-2 ${!keysDown[key] ? 'bg-stone-800' : 'bg-stone-700'} border-4 border-stone-200 rounded-xl select-none`}
+            onMouseDown={e => {
+              document.dispatchEvent(new KeyboardEvent('keydown', { 'key': key }));
+            }}
+            onMouseUp={e => {
+              if (!keysDown[key]) return;
+              document.dispatchEvent(new KeyboardEvent('keyup', { 'key': key }));
+            }}
+            onMouseLeave={e => {
+              if (!keysDown[key]) return;
+              document.dispatchEvent(new KeyboardEvent('keyup', { 'key': key }));
+            }}
             key={key}
           >
             <p className="text-xl font-bold text-white text-center">{key.toUpperCase()}</p>
@@ -103,7 +114,18 @@ export default function Piano(props) {
       <div className="-mt-16 flex h-32 gap-2 z-10">
         {config.whiteKeys.map(key =>
           <div
-            className={`flex-1 flex flex-col-reverse px-1 py-2 ${!keysDown[key] ? 'bg-stone-200' : 'bg-stone-400'} rounded-xl`}
+            className={`flex-1 flex flex-col-reverse px-1 py-2 ${!keysDown[key] ? 'bg-stone-200' : 'bg-stone-400'} rounded-xl select-none`}
+            onMouseDown={e => {
+              document.dispatchEvent(new KeyboardEvent('keydown', { 'key': key }));
+            }}
+            onMouseUp={e => {
+              if (!keysDown[key]) return;
+              document.dispatchEvent(new KeyboardEvent('keyup', { 'key': key }));
+            }}
+            onMouseLeave={e => {
+              if (!keysDown[key]) return;
+              document.dispatchEvent(new KeyboardEvent('keyup', { 'key': key }));
+            }}
             key={key}
           >
             <p className="text-xl font-bold text-center py-0">{key.toUpperCase()}</p>

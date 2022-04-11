@@ -69,7 +69,21 @@ export default function Bongo(props) {
     <div className="container max-w-xl flex h-12 px-12 gap-2">
       {['z','x','c','v','b','n','m',',','.'].map(key =>
       Object.keys(config.notes).find(note => config.notes[note].key === key) ?
-        <div className={`flex-1 flex flex-col relative overflow-hidden justify-center items-center outline outline-yellow-400 ${!keysDown[key] ? 'outline-2' : 'outline-4'} rounded-xl`}>
+        <div
+          className={`flex-1 flex flex-col relative overflow-hidden justify-center items-center outline outline-yellow-400 ${!keysDown[key] ? 'outline-2' : 'outline-4'} rounded-xl select-none`}
+          onMouseDown={e => {
+            document.dispatchEvent(new KeyboardEvent('keydown', { 'key': key }));
+          }}
+          onMouseUp={e => {
+            if (!keysDown[key]) return;
+            document.dispatchEvent(new KeyboardEvent('keyup', { 'key': key }));
+          }}
+          onMouseLeave={e => {
+            if (!keysDown[key]) return;
+            document.dispatchEvent(new KeyboardEvent('keyup', { 'key': key }));
+          }}
+          key={key}
+        >
           <img
             src="/assets/images/bongo_icon.png"
             className="absolute top-1/2 left-0 opacity-60"
@@ -79,7 +93,7 @@ export default function Bongo(props) {
           <p className="text-xl font-bold text-white z-10">{key.toUpperCase()}</p>
         </div>
       :
-        <div className="flex-1"></div>
+        <div className="flex-1" key={key}></div>
       )}
     </div>
   );
