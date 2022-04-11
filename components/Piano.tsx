@@ -76,7 +76,8 @@ export default function Piano(props) {
         return { ...prev, [note]: id };
       })
 
-      sounds[note].seek(config.notes[note].offset, id);
+      if (config.notes[note].offset > 0)
+        sounds[note].seek(config.notes[note].offset, id);
       sounds[note].volume(1, id);
     });
     sounds[note].play();
@@ -91,7 +92,7 @@ export default function Piano(props) {
             className={`flex-1 flex flex-col-reverse px-1 py-2 ${!keysDown[key] ? 'bg-stone-800' : 'bg-stone-700'} border-4 border-stone-200 rounded-xl`}
             key={key}
           >
-            <p className="text-xl font-bold text-white text-center py-0">{key.toUpperCase()}</p>
+            <p className="text-xl font-bold text-white text-center">{key.toUpperCase()}</p>
             <p className="text-xs text-white text-center">{Object.keys(config.notes).find(note => config.notes[note].key === key)}</p>
           </div>
           :
