@@ -84,12 +84,12 @@ export default function Piano(props) {
   }
 
   return (
-    <div className="container max-w-xl flex flex-col px-4">
-      <div className="flex px-7 h-20 gap-2 z-20">
+    <div className="flex flex-col px-4 sm:px-9">
+      <div className="flex px-5 sm:px-7 h-18 sm:h-20 gap-1 sm:gap-2 z-20">
         {config.blackKeys.map(key =>
           Object.keys(config.notes).find(note => config.notes[note].key === key) ?
           <div
-            className={`flex-1 flex flex-col-reverse px-1 py-2 ${!keysDown[key] ? 'bg-stone-800' : 'bg-stone-700'} border-4 border-stone-200 rounded-xl select-none`}
+            className={`flex-1 flex flex-col-reverse px-1 py-2 ${!keysDown[key] ? 'bg-stone-800' : 'bg-stone-700'} border-2 sm:border-4 border-stone-200 rounded-lg sm:rounded-xl select-none overflow-hidden`}
             onMouseDown={e => {
               document.dispatchEvent(new KeyboardEvent('keydown', { 'key': key }));
             }}
@@ -103,7 +103,7 @@ export default function Piano(props) {
             }}
             key={key}
           >
-            <p className="text-xl font-bold text-white text-center">{key.toUpperCase()}</p>
+            <p className="text-lg sm:text-xl font-bold text-white text-center">{key.toUpperCase()}</p>
             <p className="text-xs text-white text-center">{Object.keys(config.notes).find(note => config.notes[note].key === key)}</p>
           </div>
           :
@@ -111,10 +111,10 @@ export default function Piano(props) {
         )}
       </div>
 
-      <div className="-mt-16 flex h-32 gap-2 z-10">
+      <div className="-mt-12 sm:-mt-16 flex h-24 sm:h-32 gap-1 sm:gap-2 z-10">
         {config.whiteKeys.map(key =>
           <div
-            className={`flex-1 flex flex-col-reverse px-1 py-2 ${!keysDown[key] ? 'bg-stone-200' : 'bg-stone-400'} rounded-xl select-none`}
+            className={`flex-1 flex flex-col-reverse px-1 py-2 ${!keysDown[key] ? 'bg-stone-200' : 'bg-stone-400'} rounded-lg sm:rounded-xl select-none overflow-hidden`}
             onMouseDown={e => {
               document.dispatchEvent(new KeyboardEvent('keydown', { 'key': key }));
             }}
@@ -128,7 +128,7 @@ export default function Piano(props) {
             }}
             key={key}
           >
-            <p className="text-xl font-bold text-center py-0">{key.toUpperCase()}</p>
+            <p className="text-lg sm:text-xl font-bold text-center py-0">{key.toUpperCase()}</p>
             <p className="text-xs text-center">{Object.keys(config.notes).find(note => config.notes[note].key === key)}</p>
           </div>
         )}

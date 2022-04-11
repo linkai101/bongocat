@@ -67,7 +67,7 @@ export default function Drums(props) {
   }
 
   return (
-    <div className="container max-w-xl flex h-12 gap-3">
+    <div className="flex h-12 gap-3 px-4 sm:px-5">
       {config.keys.map(key =>
       Object.keys(config.notes).find(note => config.notes[note].key === key) ?
         <div
