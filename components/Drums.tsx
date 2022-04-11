@@ -1,12 +1,12 @@
 import React from 'react';
 import { Howl, Howler } from 'howler';
 
-import config from '../config/bongo.json';
+import config from '../config/drums.json';
 
-export default function Bongo(props) {
+export default function Drums(props) {
   const {
-    setIsPlayingBongoL,
-    setIsPlayingBongoR
+    setIsPlayingDrumsL,
+    setIsPlayingDrumsR
   } = props;
 
   const [keysDown, setKeysDown] = React.useState([]);
@@ -15,9 +15,10 @@ export default function Bongo(props) {
   React.useEffect(() => {
     let activeKeys = Object.keys(keysDown).filter(key => keysDown[key]);
 
-    setIsPlayingBongoR(activeKeys.includes(config.notes[0].key));
-    setIsPlayingBongoL(activeKeys.includes(config.notes[1].key));
+    setIsPlayingDrumsR(activeKeys.length > 1);
+    setIsPlayingDrumsL(activeKeys.length > 0);
   }, [keysDown]);
+
 
   React.useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
@@ -66,11 +67,11 @@ export default function Bongo(props) {
   }
 
   return (
-    <div className="container max-w-xl flex h-12 px-10 gap-3">
+    <div className="container max-w-xl flex h-12 gap-3">
       {config.keys.map(key =>
       Object.keys(config.notes).find(note => config.notes[note].key === key) ?
         <div
-          className={`flex-1 flex flex-col relative overflow-hidden justify-center items-center outline outline-yellow-400 ${!keysDown[key] ? 'outline-2' : 'outline-4'} rounded-xl select-none`}
+          className={`flex-1 flex flex-col relative overflow-hidden justify-center items-center outline outline-purple-400 ${!keysDown[key] ? 'outline-2' : 'outline-4'} rounded-xl select-none`}
           onMouseDown={e => {
             document.dispatchEvent(new KeyboardEvent('keydown', { 'key': key }));
           }}
@@ -101,7 +102,7 @@ export default function Bongo(props) {
 
 const sounds = Object.keys(config.notes).reduce((a, v) => ({ ...a, [v]:
   new Howl({
-    src: [`/assets/bongo/Bongo.${v}.mp3`/*, `/assets/bongo/Bongo.${v}.wav`*/],
+    src: [`/assets/drums/Drums.${v}.mp3`],
     preload: true,
     onfade: (id) => sounds[v].stop(id),
   })

@@ -1,0 +1,25 @@
+{
+  "notes": {
+    "bass0": { "offset": 0, "key": "1" },
+    "bass1": { "offset": 0, "key": "2" },
+    "rim": { "offset": 0, "key": "3" },
+    "snare": { "offset": 0, "key": "4" },
+    "clap": { "offset": 0, "key": "5" },
+    "tom": { "offset": 0, "key": "6" },
+    "hihat0": { "offset": 0, "key": "7" },
+    "hihat1": { "offset": 0, "key": "8" },
+    "cymbal": { "offset": 0, "key": "9" }
+  },
+  "keys": ["1","2","3","4","5","6","7","8","9","0"],
+  "icons": {
+    "bass0": "",
+    "bass1": "",
+    "rim": "/assets/images/snare_icon.png",
+    "snare": "/assets/images/snare_icon.png",
+    "clap": "/assets/images/clap_icon.png",
+    "tom": "",
+    "hihat0": "/assets/images/hihat_icon.png",
+    "hihat1": "/assets/images/hihat_icon.png",
+    "cymbal": "/assets/images/cymbal_icon.png"
+  }
+}

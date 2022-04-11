@@ -2,5 +2,10 @@
   "notes": {
     "1": { "offset": 0, "key": "z" },
     "0": { "offset": 0, "key": "c" }
+  },
+  "keys": ["z","x","c","v","b","n","m",",","."],
+  "icons": {
+    "1": "/assets/images/bongo_icon.png",
+    "0": "/assets/images/bongo_icon.png"
   }
 }
