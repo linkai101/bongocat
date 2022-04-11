@@ -15,8 +15,8 @@ export default function Bongo(props) {
   React.useEffect(() => {
     let activeKeys = Object.keys(keysDown).filter(key => keysDown[key]);
 
-    setIsPlayingBongoR(activeKeys.includes(config.notes.H.key));
-    setIsPlayingBongoL(activeKeys.includes(config.notes.L.key));
+    setIsPlayingBongoR(activeKeys.includes(config.notes[0].key));
+    setIsPlayingBongoL(activeKeys.includes(config.notes[1].key));
   }, [keysDown]);
 
   React.useEffect(() => {
