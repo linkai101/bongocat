@@ -84,7 +84,7 @@ export default function Home() {
       </div>
       
       <div className="container max-w-2xl my-6">
-        <div className="flex flex-col gap-8 mx-4 py-4 rounded-xl bg-stone-800">
+        <div className="hidden sm:flex flex-col gap-8 mx-4 py-4 rounded-xl bg-stone-800">
           <Drums
             setIsPlayingDrumsL={setIsPlayingDrumsL}
             setIsPlayingDrumsR={setIsPlayingDrumsR}
